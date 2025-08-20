@@ -1,0 +1,115 @@
+@define-color main-bg #15161E;
+@define-color main-fg rgb(225, 225, 245);
+@define-color wb-act-bg rgb(122, 162, 247);
+@define-color wb-act-fg rgb(26, 27, 38);
+
+* {
+  font-family: "0xProto Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* === Waybar Window === */
+window#waybar {
+  background: transparent;
+}
+
+window > box {
+  background: @main-bg;
+  border-radius: 0.5em;
+  margin: 0.4em 8em 0.1em 8em;
+  padding: 0.2em 0.6em 0.2em 0.6em;
+}
+
+/* === Tooltip === */
+tooltip {
+  background: @main-bg;
+  color: @main-fg;
+  border-radius: 5px;
+}
+
+/* === Workspaces & Taskbar === */
+#workspaces,
+#taskbar {
+  margin: 0.2em 0;
+  border-radius: 4px;
+  background: #25262F;
+}
+
+#taskbar {
+  margin-left: 0.8em;
+}
+
+#taskbar button {
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  min-width: 1.4em;
+}
+
+#workspaces button {
+  color: #9ece6a;
+  border-radius: 4px;
+  padding: 0.2em 0.2em 0.2em 0em;
+}
+
+#workspaces button.focused {
+  color: #ff757f;
+}
+
+#taskbar button {
+  padding: 0.2em 0.4em;
+}
+
+#taskbar button.active {
+  background: @wb-act-bg;
+  color: @wb-act-fg;
+}
+
+/* === Modules === */
+tray,
+#clock,
+#custom-pomo,
+#battery,
+#pulseaudio,
+#backlight,
+#idle_inhibitor,
+#custom-clipboard,
+#custom-networkmanager,
+#custom-bluetooth,
+#custom-power,
+#custom-l_end,
+#custom-r_end {
+  padding: 0 0.25em;
+}
+
+/* === Icon Coloring === */
+#battery {
+  color: #7aa2f7;
+}
+
+#pulseaudio {
+  color: #e0af68;
+}
+
+#backlight {
+  color: #f7768e;
+}
+
+/* === Tray === */
+#tray {
+  background: #25262F;
+  border-radius: 4px;
+  margin-right: 0.3em;
+  padding: 0 0.5em;
+}
+
+/* === Custom Separators === */
+#custom-l_end {
+  border-radius: 5px 0 0 5px;
+  margin-left: 0.5em;
+}
+
+#custom-r_end {
+  border-radius: 0 5px 5px 0;
+  margin-right: 0.5em;
+}

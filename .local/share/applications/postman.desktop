@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Postman
+Icon=postman
+Exec=/home/gilang/Applications/Postman/Postman %u
+Categories=Development;GTK;
+StartupNotify=false
+Comment=
+Path=
+Terminal=false

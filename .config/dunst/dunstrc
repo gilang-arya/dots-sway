@@ -1,0 +1,41 @@
+[global]
+markup = full
+font = 0xProto Nerd Font 11
+corner_radius = 15
+frame_width = 2
+frame_color = "#ffffff"
+separator_color = frame
+padding = 15
+gap_size = 5
+offset = (5, 8)
+transparency = 10
+background = "#1a1b26"
+foreground = "#c0caf5"
+timeout = 3
+
+# Icons
+icon_theme = Tela-circle-dark
+icon_path = ~/.icons/Tela-circle-dark
+
+# Low urgency
+[urgency_low]
+foreground = "#ffffff"
+
+# Low urgency with action
+[urgency_low_critical]
+frame_color = "#ffffff"
+
+# Normal urgency
+[urgency_normal]
+
+# Normal urgency with action
+[urgency_normal_critical]
+frame_color = "#ffffff"
+
+# High urgency
+[urgency_critical]
+frame_color = "#7aa2f7"
+
+# High urgency with action
+[urgency_high_critical]
+frame_color = "#ffffff"

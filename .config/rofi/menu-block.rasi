@@ -1,0 +1,99 @@
+// Config //
+configuration {
+    show-icons:					false;
+}
+
+* {
+    main-bg:         		    #15161E;
+    main-br:            		#ffffff;
+    select-bg:          		#1A1B26;
+    select-fg:					#c53b53;
+    text:						#CDD6F4;
+    text-fg:					#101C44;
+}
+
+// Main //
+window {
+    transparency:               "real";
+    fullscreen:                 false;
+    enabled:                    true;
+    cursor:                     "default";
+    spacing:                    0.5em;
+    padding:					2em 3em;
+    border-radius:              5px;
+    background-color:           @main-bg;
+    border:						2px solid;
+    border-color:				@main-br;
+}
+
+mainbox {
+    enabled:                    true;
+    spacing:                    0.5em;
+    orientation:                horizontal;
+    children:                   [ "listbox" ];
+    background-color:           transparent;
+}
+
+inputbar {
+    enabled:                    true;
+    children:                   [ prompt ];
+    background-color:           transparent;
+}
+
+prompt {
+    enabled:                    true;
+    font:                       "0xProto Nerd Font bold 10";
+    padding:                    0.5em 1.2em 0.5em 1em;
+    text-align:                 center;
+    cursor:                     default;
+    background-color:           @select-fg;
+    color:						@text;
+    border-radius:              5px;
+}
+
+// Lists //
+listbox {
+    spacing:                    1em;
+    children:                   [ "inputbar", "listview" ];
+    background-color:           transparent;
+}
+
+listview {
+	enabled:                    true;
+    columns:                    4;
+    lines:                      1;
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+    layout:                     vertical;
+    reverse:                    false;
+    fixed-height:               true;
+    fixed-columns:              true;
+    spacing:                    15px;
+    background-color:           transparent;
+}
+
+// Elements //
+element {
+    enabled:                    true;
+    padding:					30px 20px 30px 5px;
+    border-radius:              5px;
+    background-color:           @select-bg;
+    cursor:                     pointer;
+}
+
+element-text {
+    font:                       "0xProto Nerd Font bold 35";
+    background-color:           transparent;
+    text-color:                 @text;
+    cursor:                     inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+}
+
+element selected.normal {
+    background-color:           @select-fg;
+}
+
+
+

@@ -1,0 +1,114 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  false;
+    display-drun:                "";
+    font:                        "0xProto Nerd Font 10";
+}
+
+@theme "theme"
+
+// Main //
+window {
+    transparency:                "real";
+    fullscreen:                  false;
+    enabled:                     true;
+    cursor:                      "default";
+    spacing:                     0.5em;
+    padding:					 1em 2em 1em 2em;
+    border:                      2px solid;
+    border-radius:               5px;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     0.5em;
+    orientation:                 horizontal;
+    children:                    [ "listbox" ];
+    background-color:            transparent;
+}
+
+// Inputs //
+inputbar {
+    enabled:                     true;
+    children:                    [ prompt, entry ];
+    spacing:                     0.5em;
+    padding:                     0.5em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  @text;
+}
+
+prompt {
+    enabled:                     true;
+    padding:                     0.5em 1em 0.5em 1.5em;
+    text-align:                  center;
+    cursor:                      default;
+    background-color:            @main-br;
+    text-color:                  @text-fg;
+    border:                      2px solid;
+    border-color:                @main-br;
+    border-radius:               5px;
+}
+
+entry {
+    enabled:                     true;
+    padding:                     0.5em;
+    cursor:                      text;
+    background-color:            @main-bg;
+    text-color:                  inherit;
+    border:                      2px solid;
+    border-color:                @main-br;
+    border-radius:               5px;
+}
+
+// Lists //
+listbox {
+    spacing:                     1em;
+    children:                    [ "inputbar", "listview" ];
+    background-color:            transparent;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    expand:                      false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @text;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     0.8em;
+    padding:                     1em;
+    cursor:                      pointer;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @text-fg;
+    border-radius:               5px;
+}
+
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}
+

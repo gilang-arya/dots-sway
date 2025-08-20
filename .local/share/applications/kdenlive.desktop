@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Kdenlive
+Icon=kdenlive
+Exec=/home/gilang/Applications/Kdenlive.AppImage %u
+Categories=Development;GTK;
+StartupNotify=false
+Comment=
+Path=
+Terminal=false

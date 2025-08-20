@@ -1,0 +1,57 @@
+# Konfigurasi dasar
+ignore-empty-password
+font=0xProto Nerd Font Propo
+font-size=40
+clock
+image=~/.wallpapers/furina.jpg
+indicator-idle-visible
+
+timestr=%H:%M
+
+# Posisi dan ukuran indikator
+indicator-radius=150
+indicator-thickness=20
+indicator-x-position=700
+indicator-y-position=350
+
+# Warna tema utama (TokyoNight)
+inside-color=1a1b2688
+ring-color=7aa2f788
+line-color=00000000
+text-color=c0caf5
+separator-color=00000000
+
+# Warna status: normal, salah, verifikasi, caps lock
+key-hl-color=7dcfff
+bs-hl-color=ff9e64
+
+# Status: salah
+inside-wrong-color=1a1b2688
+line-wrong-color=f7768e
+ring-wrong-color=f7768eaa
+text-wrong-color=f7768e
+
+# Status: verifikasi
+inside-ver-color=1a1b2688
+line-ver-color=9ece6a
+ring-ver-color=9ece6aaa
+text-ver-color=c0caf5
+
+# Status: clear
+inside-clear-color=1a1b2688
+line-clear-color=ff9e64
+ring-clear-color=ff9e64aa
+text-clear-color=ff9e64
+
+# Status: caps lock
+inside-caps-lock-color=1a1b2688
+line-caps-lock-color=bb9af7
+ring-caps-lock-color=bb9af7aa
+text-caps-lock-color=bb9af7
+caps-lock-bs-hl-color=ff9e64
+caps-lock-key-hl-color=bb9af7
+
+# Layout keyboard
+layout-bg-color=1a1b2688
+layout-border-color=00000000
+layout-text-color=c0caf5

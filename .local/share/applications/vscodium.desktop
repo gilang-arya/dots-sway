@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=VSCodium
+Icon=vscodium
+Exec=/home/gilang/Applications/VSCodium/codium %u
+Categories=Development;GTK;
+StartupNotify=false
+Comment=
+Path=
+Terminal=false

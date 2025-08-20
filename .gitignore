@@ -1,0 +1,29 @@
+# Certificates, Keys, and Environment
+**/*.key
+**/*.pem
+**/*.crt
+**/*.env
+
+# Cache, Logs, and Swap Files
+**/.cache/
+**/*.swp
+
+# IDE / Editor Configuration Files
+**/.vscode/
+**/.idea/
+
+# Backup and Temporary Files
+**/*.bak
+**/*~
+
+# fish Shell Config (ignore custom scripts and plugins)
+**/fish/**
+!**/fish/
+!**/fish/config.fish
+
+# Micro Text Editor Files
+**/micro/backups/
+**/micro/buffers/
+
+# Xfce4 Desktop Environment Config
+**/help.rc

@@ -1,0 +1,191 @@
+{
+  // General Settings
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "height": 41,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+
+  // Module Layouts
+  "modules-left": [
+  	"custom/l_end",
+  	"idle_inhibitor",
+  	"clock",
+  	"custom/r_end",
+    "tray",
+    "wlr/taskbar"
+  ],
+  "modules-center": [
+  	"sway/workspaces"
+  ],
+  "modules-right": [
+  	"custom/l_end",
+    "group/system-level",
+    "custom/r_end",
+    "custom/l_end",
+    "group/control-panel",
+    "custom/r_end"
+  ],
+
+  // === Group: System Level ===
+  "group/system-level": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/recording",
+      "battery",
+      "pulseaudio",
+      "backlight"
+    ]
+  },
+
+  // === Group: Control Panel ===
+  "group/control-panel": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/clipboard",
+      "custom/bluetooth",
+      "custom/networkmanager",
+      "custom/power"
+    ]
+  },
+
+  // === Left Modules ===
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5
+  },
+
+  "sway/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": []
+    },
+    "format": "{icon}",
+    "format-icons": {
+      "focused": "",
+      "default": "⭘"
+    }
+  },
+  
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 20,
+    "icon-theme": "Tela-circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate"
+  },
+
+  // === Center Modules ===
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰥔 ",
+      "deactivated": " "
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M %p}",
+    "format-alt": "{:%R | 󰃭 %d·%m·%y}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#7832C8'><b>{}</b></span>",
+        "weekdays": "<span color='#3278C8'><b>{}</b></span>",
+        "today": "<span color='#C86432'><b>{}</b></span>"
+      }
+    }
+  },
+
+  // === Right Modules ===
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": [
+      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽",
+      "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+    ]
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 Muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "brightnessctl s 1%+",
+    "on-scroll-down": "brightnessctl s 1%-"
+  },
+
+  "custom/clipboard": {
+    "format": "<span color=\"#7aa2f7\">   </span>",
+    "on-click": "sh ~/.scripts/menus/clipboard-manager.sh",
+    "tooltip": false
+  },
+
+  "custom/bluetooth": {
+    "exec": "sh ~/.scripts/menus/bluetooth-manager.sh --status | cat",
+    "format": "{}  ",
+    "interval": 5,
+    "on-click": "sh ~/.scripts/menus/bluetooth-manager.sh",
+    "tooltip": false
+  },
+
+  "custom/recording": {
+    "exec": "sh ~/.scripts/menus/recording-manager.sh --status | cat",
+    "format": "{}  ",
+    "interval": 2,
+    "on-click": "sh ~/.scripts/menus/recording-manager.sh",
+    "tooltip": false
+  },
+
+  "custom/networkmanager": {
+    "exec": "sh ~/.scripts/menus/network-manager.sh --status | cat",
+    "format": "{}  ",
+    "interval": 5,
+    "on-click": "sh ~/.scripts/menus/network-manager.sh",
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "on-click": "sh ~/.scripts/menus/powermenu.sh",
+    "format": "<span color=\"#f7768e\"></span>",
+    "tooltip": false
+  },
+
+  // === Decorative Elements ===
+  "custom/l_end": {
+    "format": " ",
+    "tooltip": false
+  },
+
+  "custom/r_end": {
+    "format": " ",
+    "tooltip": false
+  },
+}

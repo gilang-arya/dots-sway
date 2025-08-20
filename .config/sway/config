@@ -1,0 +1,183 @@
+################
+### VARIABLE ###
+################
+
+set $mod Mod4
+set $alt Mod1
+
+# Vim-style movement
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Programs
+set $term foot
+set $browser firefox
+set $filemanager thunar
+
+#################
+### AUTOSTART ###
+#################
+
+# Sway & Waybar
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec_always waybar
+
+# Autotiling
+exec_always autotiling
+
+# Clipboard management
+exec wl-paste --type text --watch cliphist store
+exec wl-paste --type image --watch cliphist store
+
+# Polkit authentication
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+##############
+### OUTPUT ###
+##############
+
+output eDP-1 resolution 1366x768 position 0,0 scale 1
+
+# Wallpaper
+output * background ~/.wallpapers/ganyu.png fill
+
+# Cursor theme
+seat seat0 xcursor_theme Bibata-Modern-Ice 24
+
+# Touchpad settings
+input "1267:12587:ELAN050B:01_04F3:312B_Touchpad" {
+    tap enabled
+    natural_scroll enabled
+    dwt enabled
+    accel_profile adaptive
+    middle_emulation enabled
+}
+
+################
+### FLOATING ###
+################
+
+# Useful floating rules
+for_window [title=".*(Open Folder|Rename|File Operation Progress|Confirm to replace files|Extract|Compress).*"] floating enable
+for_window [app_id="mpv"] floating enable
+for_window [title="^Waydroid$"] fullscreen enable
+for_window [app_id="viewnior"] floating enable
+for_window [app_id="zenity"] floating enable
+for_window [title="^Steam Settings$"] floating enable
+
+# Resize some floating windows
+for_window [app_id="mpv"] resize set 800 500
+for_window [app_id="xdg-desktop-portal-wlr"] resize set 900 600
+for_window [app_id="zenity"] resize set 900 600
+for_window [app_id="viewnior"] resize set 800 500
+
+##################
+### DECORATION ###
+##################
+
+font pango:0xProto Nerd Font 9
+
+gaps inner 3
+default_floating_border pixel 2
+default_border pixel 2
+
+# Color theme
+set $main #ffffff
+set $fg #232429
+set $text #e1e1f5
+set $back #1a1b26
+
+client.focused          $main $back $text $main $main
+client.focused_inactive $fg $back $text $fg $fg
+client.unfocused        $fg $back $text $fg $fg
+
+################
+### KEYBINDS ###
+################
+
+# Apps
+bindsym $mod+Return exec $term
+bindsym $mod+q kill
+bindsym $mod+f exec $browser
+bindsym $mod+e exec $filemanager
+bindsym $mod+space exec rofi -show drun -theme ~/.config/rofi/app-menu.rasi
+bindsym $mod+x exec sh ~/.scripts/menus/powermenu.sh
+bindsym $mod+m exec sh ~/.scripts/menus/music.sh
+bindsym $mod+w exec sh ~/.scripts/menus/network-manager.sh
+bindsym $mod+r exec sh ~/.scripts/menus/recording-manager.sh
+bindsym $mod+z exec hyprpicker -a
+
+# Screenshot
+bindsym Print exec ~/.scripts/screenshot.sh
+
+# Waybar reload
+bindsym $mod+Shift+r exec pkill waybar && waybar & disown
+
+# Reload config
+bindsym $mod+Shift+c reload
+
+# Focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Workspace switching
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+# Splits
+bindsym $mod+Shift+b splith
+bindsym $mod+Shift+v splitv
+
+# Tiling, floating, fullscreen
+bindsym $mod+Shift+f fullscreen
+bindsym $mod+Shift+space floating toggle
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Resize
+bindsym $mod+Alt+$left resize shrink width 10px
+bindsym $mod+Alt+$down resize grow height 10px
+bindsym $mod+Alt+$up resize shrink height 10px
+bindsym $mod+Alt+$right resize grow width 10px
+
+# Floating window modifier
+floating_modifier $mod normal
+
+include /etc/sway/config.d/*
