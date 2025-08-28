@@ -29,3 +29,4 @@ viewnior
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xdg-user-dirs
+ly

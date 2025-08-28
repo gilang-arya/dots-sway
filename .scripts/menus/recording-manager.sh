@@ -12,8 +12,7 @@ STOPPED_ICON="⏹"
 # Nama sink audio internal dan mic
 # Cek dengan: pactl list sources short & pactl list sinks short
 AUDIO_INTERNAL="alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Headphones__sink.monitor"
-#AUDIO_MICROPHONE="alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Mic1__source"
-AUDIO_MICROPHONE="easyeffects_source"
+AUDIO_MICROPHONE="alsa_input.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__Mic1__source"
 
 OUTPUT_DIR="$HOME/Videos/Recording"
 mkdir -p "$OUTPUT_DIR"
